@@ -1,11 +1,14 @@
 
 ul.tabs {
-  height: 25px;
+
   line-height: 25px;
   margin: 0 0 3px;
   list-style: none;
   position: relative;
   padding: 0;
+  @include tablet-landscape{
+    height: 25px;
+  }
 }
 
 * html ul.tabs {
@@ -16,8 +19,10 @@ ul.tabs {
   display: block;
   background: none;
   z-index: -1;
-  width: 20%;
   text-align: center;
+  @include tablet-landscape{
+    width: 20%;
+  }
 
 }
 
@@ -28,13 +33,16 @@ ul.tabs {
 }
 
 ul.tabs li {
-  float: left;
   padding: 5px;
   margin-right: 10px;
   height: 25px;
   color: green;
   font-weight: bold;
   text-transform: uppercase;
+  @include tablet-landscape{
+
+    float: left;
+  }
 }
 
 ul.tabs li a {
@@ -75,11 +83,16 @@ div.t1,
 div.t2,
 div.t3,
 div.t4 {
-  float: left;
-  width: 100%;
+  width: 90%;
+
   padding: 15px 10px;
   z-index: 5;
   position: relative;
-  margin: -2px;
+  margin: 0 auto;
   text-align: justify;
+  @include tablet-landscape{
+    float: left;
+    width: 100%;
+    margin: -2px;
+  }
 }

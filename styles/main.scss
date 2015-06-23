@@ -21,6 +21,7 @@ body {
   bottom: 0;
   left: 0;
   right: 0;
+  overflow: scroll;
 
 
   background: rgb(67,82,45);
@@ -34,35 +35,41 @@ body {
 
 
   .content{
-    width: 1000px;
-    height: 500px;
+    width: 320px;
+    height: auto;
     position: relative;
     margin: 0 auto;
-    top: 50px;
+    top: 5px;
+//    left: -165px;
     background-color: rgba(255,255,255, 0.7);
 
     .leftSide{
-      width: 300px;
+      width: 100%;
       height: 100%;
       position: relative;
-      float: left;
       color: green;
       &:before{
-        width: 1px;
-        height: 90%;
-        content: '';
-        position: absolute;
-        right: -5px;
-        background-color: lightgreen;
-        top: 5%;
+        @include tablet-landscape{
+          width: 1px;
+          height: 90%;
+          content: '';
+          position: absolute;
+          right: -5px;
+          background-color: lightgreen;
+          top: 5%;
+        }
+
       }
 
       .textTitle{
         position: relative;
-        top: 30px;
+        top: 10px;
         text-transform: uppercase;
         font-weight: bold;
         text-align: center;
+        @include tablet-landscape{
+          top: 30px;
+        }
       }
       .name{
         top: 20px;
@@ -76,7 +83,10 @@ body {
         background: url("../img/tempAva.jpg") no-repeat;
         background-size: 100% ;
         position: relative;
-        top: 100px;
+        top: 50px;
+        @include tablet-landscape{
+          top: 100px;
+        }
       }
       .tel, .vk, .mail{
         display: block;
@@ -87,7 +97,7 @@ body {
         margin: 20px;
         margin-left: 70px;
         width: 200px;
-        top: 100px;
+        top: 20px;
 
         &:before{
           content: '';
@@ -106,6 +116,10 @@ body {
           color:  green;
         }
 
+        @include tablet-landscape{
+          top: 100px;
+        }
+
 
       }
       .vk:before{
@@ -115,20 +129,39 @@ body {
         background-position-y: -60px ;
       }
 
+      @include tablet-landscape{
+        width: 300px;
+        height: 100%;
+        position: relative;
+        float: left;
+        color: green;
+      }
+
     }
 
     .feedback{
-      width: 650px;
-      margin-top: 50px;
+      width: 100%;
+      height: 100%;
+      margin-top: 20px;
       position: relative;
-      margin-left: 310px;
-      top: 20px;
 
+      .feedWrap{
+        width: 100%;
+        height: 100%;
+        position: relative;
+      }
       .list{
         li{
           list-style-type: circle;
           margin: 20px;
         }
+      }
+      @include tablet-landscape{
+        width: 650px;
+        margin-top: 50px;
+        position: relative;
+        margin-left: 310px;
+        top: 20px;
       }
     }
 
@@ -139,25 +172,46 @@ body {
       background-color: red;
       color: #fff;
       display: block;
-      text-align: center;
 //      top: 100px;
-      position: absolute;
+      position: relative;
       text-align: center;
-      bottom: 10px;
-      left: 100px;
-      right: 100px;
       cursor: pointer;
 
-      .tabs {
-        li {
-
-        }
+      @include tablet-landscape{
+        width: 300px;
+        margin: 0 auto;
+        padding: 10px;
+        background-color: red;
+        color: #fff;
+        display: block;
+        //      top: 100px;
+        position: absolute;
+        text-align: center;
+        bottom: 10px;
+        left: 100px;
+        right: 100px;
+        cursor: pointer;
       }
 
 
     }
     .img{
       text-align: center;
+    }
+    @include mobile-landscape{
+      width: 500px;
+    }
+    @include tablet{
+      width: 700px;
+    }
+    @include tablet-landscape{
+      width: 1000px;
+      height: 500px;
+      position: relative;
+      margin: 0 auto;
+      top: 50px;
+      background-color: rgba(255,255,255, 0.7);
+
     }
 
   }
