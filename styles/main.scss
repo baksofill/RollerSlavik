@@ -1,0 +1,256 @@
+@import "_lib";
+@import "_tabs";
+@import "_jquery.lightbox";
+@import "bootstrap.min";
+
+
+
+body {
+  overflow: hidden;
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+  background-color: white;
+  font-family: Arial;
+  margin: 0;
+  padding: 0;
+
+
+}
+.wrapper{
+  position:absolute;
+  top: 0 ;
+  bottom: 0;
+  left: 0;
+  right: 0;
+
+
+  background: rgb(67,82,45);
+  background: -moz-linear-gradient(45deg,  rgba(67,82,45,1) 0%, rgba(252,244,2,1) 44%, rgba(77,129,57,1) 100%);
+  background: -webkit-gradient(linear, left bottom, right top, color-stop(0%,rgba(67,82,45,1)), color-stop(44%,rgba(252,244,2,1)), color-stop(100%,rgba(77,129,57,1)));
+  background: -webkit-linear-gradient(45deg,  rgba(67,82,45,1) 0%,rgba(252,244,2,1) 44%,rgba(77,129,57,1) 100%);
+  background: -o-linear-gradient(45deg,  rgba(67,82,45,1) 0%,rgba(252,244,2,1) 44%,rgba(77,129,57,1) 100%);
+  background: -ms-linear-gradient(45deg,  rgba(67,82,45,1) 0%,rgba(252,244,2,1) 44%,rgba(77,129,57,1) 100%);
+  background: linear-gradient(45deg,  rgba(67,82,45,1) 0%,rgba(252,244,2,1) 44%,rgba(77,129,57,1) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#43522d', endColorstr='#4d8139',GradientType=1 );
+
+
+  .content{
+    width: 1000px;
+    height: 500px;
+    position: relative;
+    margin: 0 auto;
+    top: 50px;
+    background-color: rgba(255,255,255, 0.7);
+
+    .leftSide{
+      width: 300px;
+      height: 100%;
+      position: relative;
+      float: left;
+      color: green;
+      &:before{
+        width: 1px;
+        height: 90%;
+        content: '';
+        position: absolute;
+        right: -5px;
+        background-color: lightgreen;
+        top: 5%;
+      }
+
+      .textTitle{
+        position: relative;
+        top: 30px;
+        text-transform: uppercase;
+        font-weight: bold;
+        text-align: center;
+      }
+      .name{
+        top: 20px;
+        position: relative;
+      }
+      .ava{
+        content: '';
+        width: 280px;
+        height: 200px;
+        margin: 0 auto;
+        background: url("../img/tempAva.jpg") no-repeat;
+        background-size: 100% ;
+        position: relative;
+        top: 100px;
+      }
+      .tel, .vk, .mail{
+        display: block;
+        margin-top: 20px;
+        font-weight: bold;
+        text-align: left;
+        position: relative;
+        margin: 20px;
+        margin-left: 70px;
+        width: 200px;
+        top: 100px;
+
+        &:before{
+          content: '';
+          display: block;
+          position: absolute;
+          background: url("../img/ico.png") no-repeat;
+          background-size: 100%;
+          width: 30px;
+          height: 30px;
+          overflow: hidden;
+          top: -5px;
+          left: -40px;
+
+        }
+        a{
+          color:  green;
+        }
+
+
+      }
+      .vk:before{
+        background-position-y: -30px ;
+      }
+      .mail:before{
+        background-position-y: -60px ;
+      }
+
+    }
+
+    .feedback{
+      width: 650px;
+      margin-top: 50px;
+      position: relative;
+      margin-left: 310px;
+      top: 20px;
+
+      .list{
+        li{
+          list-style-type: circle;
+          margin: 20px;
+        }
+      }
+    }
+
+    .button{
+      width: 300px;
+      margin: 0 auto;
+      padding: 10px;
+      background-color: red;
+      color: #fff;
+      display: block;
+      text-align: center;
+//      top: 100px;
+      position: absolute;
+      text-align: center;
+      bottom: 10px;
+      left: 100px;
+      right: 100px;
+      cursor: pointer;
+
+      .tabs {
+        li {
+
+        }
+      }
+
+
+    }
+    .img{
+      text-align: center;
+    }
+
+  }
+
+}
+#orderCallModal {
+  z-index: 5000;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: absolute;
+  display: none;
+  .modal-text{
+    margin-top: -55px;
+  }
+  .closeBtn{
+    cursor: pointer;
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    border-radius: 50%;
+    border: 1px solid red;
+    position: absolute;
+    right: -15px;
+    top: -15px;
+    background-color: #fff;
+    color: red;
+    font-size: 150%;
+  }
+  .modal-backdrop{
+    width: 100%;
+    height: 100%!important;
+    position: absolute;
+    display: block;
+    background-color: #000;
+    opacity: 0.6;
+    content: '';
+    z-index: 50;
+  }
+  .modal-header{
+    text-align: right;
+  }
+  h3{
+    color: #000;
+    font-size: 130%;
+    margin: 15px;
+  }
+  &>.modal-body{
+    z-index: 50;
+    position: absolute;
+    display: block;
+    width: 500px;
+    height: 350px;
+    left: 50%;
+    margin-left: -250px;
+    margin-top: -260px;
+    background: #fff;
+    top: 50%;
+    text-align: center;
+    input, select, textarea {
+      border: 1px solid #c2c2cc;
+      border-radius: 3px;
+      box-shadow: inset 3px 3px 1px 0 #eeeeef;
+      font-size: 1.15385em;
+      margin: 10px;
+      padding: 0.33333em;
+      resize: none;
+      outline: none;
+      width: 65%;
+      &:focus{
+        border: 1px solid red;
+      }
+    }
+    #anotherDaySun{
+      text-align: center;
+      width:  50%;
+    }
+
+    button{
+      border-radius: 3px;
+      display: block;
+      margin: 10px auto;
+      padding: 10px;
+      font-size: 120%;
+      resize: none;
+      outline: none;
+      background: red;
+      width: 70%;
+      text-transform: uppercase;
+      color: #fff;
+      border: none;
+      letter-spacing: 1px;
+    }
+  }
+}
